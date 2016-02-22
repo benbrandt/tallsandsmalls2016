@@ -5,8 +5,6 @@ const variables = {
     champagne: '#DDDCC5',
     gray: '#6A6A61',
     tan: '#958976',
-
-    primary: variables.colors.burgandy,
   },
 
   font: {
@@ -14,13 +12,17 @@ const variables = {
       cursive: 'Pacifico, cursive',
       sansSerif: 'Roboto, sans-serif',
     },
+    headings: {
+      lineHeight: '1.125',
+      marginBottom: '20px',
+    },
     sizes: {
-      1: '3rem',
-      2: '2.5rem',
-      3: '1.75rem',
-      4: '1.5rem',
-      5: '1.25rem',
-      6: '1rem',
+      one: '3rem',
+      two: '2.5rem',
+      three: '1.75rem',
+      four: '1.5rem',
+      five: '1.25rem',
+      six: '1rem',
     },
   },
 
