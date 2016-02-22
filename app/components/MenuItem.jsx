@@ -1,11 +1,13 @@
+import variables from '../styles/variables';
 import Radium from 'radium';
 import React, { Component, PropTypes } from 'react';
 
 const styles = {
   base: {
-    color: '#333',
+    color: variables.colors.black,
     flex: '1',
-    fontWeight: 'bold',
+    flexOrder: '1',
+    fontWeight: '700',
     margin: 'auto',
     padding: '.85rem 1rem',
     textAlign: 'center',
@@ -13,8 +15,18 @@ const styles = {
     textTransform: 'uppercase',
 
     ':hover': {
-      borderBottom: '2px solid #2199e8',
-      color: '#2199e8',
+      color: variables.colors.burgandy,
+    },
+  },
+
+  logo: {
+    flexOrder: '-1',
+    fontFamily: variables.font.families.cursive,
+    fontSize: variables.font.sizes.three,
+    textTransform: 'none',
+
+    '@media min-width(600px)': {
+      flexOrder: '1',
     },
   },
 };
@@ -24,7 +36,10 @@ class MenuItem extends Component {
     return (
       <a
         href={this.props.link}
-        style={styles.base}
+        style={[
+          styles.base,
+          this.props.type === 'logo' ? styles.logo : {},
+        ]}
       >
         {this.props.children}
       </a>
@@ -35,6 +50,7 @@ class MenuItem extends Component {
 MenuItem.propTypes = {
   children: PropTypes.string,
   link: PropTypes.string,
+  type: PropTypes.string,
 };
 
 MenuItem = Radium(MenuItem);
