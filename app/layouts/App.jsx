@@ -1,5 +1,5 @@
 import content from '../data/content';
-import Menu from './Menu.jsx';
+import Menu from '../components/Menu.jsx';
 import React, { Component } from 'react';
 import { StyleRoot } from 'radium';
 
