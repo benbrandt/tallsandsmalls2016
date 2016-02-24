@@ -4,10 +4,11 @@ import React, { Component, PropTypes } from 'react';
 
 const styles = {
   base: {
-    background: 'white',
+    background: 'rgba(255, 255, 255, .8)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
+    position: 'relative',
 
     '@media (min-width: 600px)': {
       flexFlow: 'row nowrap',

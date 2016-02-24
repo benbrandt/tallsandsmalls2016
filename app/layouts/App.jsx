@@ -6,9 +6,21 @@ import variables from '../styles/variables.js';
 
 const styles = {
   base: {
+    backgroundImage: '',
     margin: '0 auto',
     maxWidth: '960px',
     position: 'relative',
+  },
+
+  overlay: {
+    background: variables.colors.black,
+    bottom: '0',
+    content: '',
+    left: '0',
+    opacity: '.25',
+    position: 'absolute',
+    right: '0',
+    top: '0',
   },
 };
 
@@ -19,10 +31,12 @@ class App extends Component {
         <Style
           rules={{
             body: {
-              background: variables.colors.champagne,
+              background: 'url(assets/home.jpg) center no-repeat',
+              backgroundSize: 'cover',
               color: variables.colors.gray,
               fontFamily: variables.font.families.sansSerif,
               fontSize: '1rem',
+              height: '100vh',
               lineHeight: '1.428571428571429',
             },
 
@@ -85,6 +99,7 @@ class App extends Component {
             },
           }}
         />
+        <div style={styles.overlay}></div>
         <div style={styles.base}>
           <Menu data={content.menu} />
         </div>
