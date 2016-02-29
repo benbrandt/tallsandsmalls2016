@@ -1,15 +1,18 @@
 import content from '../data/content.js';
 import Menu from '../components/Menu.jsx';
+import Panel from '../components/Panel.jsx';
 import React, { Component } from 'react';
 import { Style, StyleRoot } from 'radium';
 import variables from '../styles/variables.js';
 
 const styles = {
   base: {
-    backgroundImage: '',
+    alignItems: 'stretch',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     margin: '0 auto',
-    maxWidth: '960px',
-    position: 'relative',
+    minHeight: '100vh',
   },
 
   overlay: {
@@ -36,7 +39,6 @@ class App extends Component {
               color: variables.colors.gray,
               fontFamily: variables.font.families.sansSerif,
               fontSize: '1rem',
-              height: '100vh',
               lineHeight: '1.428571428571429',
             },
 
@@ -102,6 +104,9 @@ class App extends Component {
         <div style={styles.overlay}></div>
         <div style={styles.base}>
           <Menu data={content.menu} />
+          <Panel>
+            <p>Hello</p>
+          </Panel>
         </div>
       </StyleRoot>
     );
