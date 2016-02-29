@@ -53,5 +53,4 @@ MenuItem.propTypes = {
   type: PropTypes.string,
 };
 
-MenuItem = Radium(MenuItem);
-export default MenuItem;
+export default Radium(MenuItem);

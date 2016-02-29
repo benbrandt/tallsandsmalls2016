@@ -1,14 +1,21 @@
 import MenuItem from './MenuItem.jsx';
 import Radium from 'radium';
 import React, { Component, PropTypes } from 'react';
+import variables from '../styles/variables';
 
 const styles = {
   base: {
     background: 'rgba(255, 255, 255, .8)',
+    position: 'relative',
+  },
+
+  wrapper: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
-    position: 'relative',
+    maxWidth: variables.misc.maxWidth,
+    margin: '0 auto',
+    width: '100%',
 
     '@media (min-width: 600px)': {
       flexFlow: 'row nowrap',
@@ -27,7 +34,9 @@ class Menu extends Component {
       <div
         style={styles.base}
       >
-        {menuItems}
+        <div style={styles.wrapper}>
+          {menuItems}
+        </div>
       </div>
     );
   }
@@ -37,5 +46,4 @@ Menu.propTypes = {
   data: PropTypes.array,
 };
 
-Menu = Radium(Menu);
-export default Menu;
+export default Radium(Menu);
