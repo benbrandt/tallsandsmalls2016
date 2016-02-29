@@ -30,6 +30,7 @@ const variables = {
     columnGap: '1.25rem',
     easing: 'ease-out',
     headerHeight: '3.125rem',
+    maxWidth: '60rem',
     radius: '.25rem',
     speed: '86ms',
   },
