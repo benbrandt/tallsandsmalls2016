@@ -68,5 +68,4 @@ Button.defaultProps = {
   kind: 'primary',
 };
 
-Button = Radium(Button);
-export default Button;
+export default Radium(Button);
