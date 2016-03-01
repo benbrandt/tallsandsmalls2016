@@ -1,7 +1,6 @@
 import content from '../data/content.js';
 import Menu from '../components/Menu.jsx';
-import Panel from '../components/Panel.jsx';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Style, StyleRoot } from 'radium';
 import variables from '../styles/variables.js';
 
@@ -104,13 +103,16 @@ class App extends Component {
         <div style={styles.overlay}></div>
         <div style={styles.base}>
           <Menu data={content.menu} />
-          <Panel>
-            <p>Hello</p>
-          </Panel>
+
+          {this.props.children}
         </div>
       </StyleRoot>
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.element,
+};
 
 export default App;
