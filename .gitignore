@@ -3,3 +3,4 @@ app/data
 build/assets
 .idea
 *.swp
+*~

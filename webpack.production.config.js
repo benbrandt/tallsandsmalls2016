@@ -1,33 +1,36 @@
-const path = require('path');
-const webpack = require('webpack');
-const nodeModulesDir = path.resolve(__dirname, 'node_modules');
+import fs from 'fs';
+import path from 'path';
 
-const config = {
-  entry: {
-    app: path.resolve(__dirname, 'app/main.js'),
-    mobile: path.resolve(__dirname, 'app/mobile.js'),
-    // Since react is installed as a node module, node_modules/react,
-    // we can point to it directly, just like require('react');
-    vendors: ['react'],
-  },
+module.exports = {
+
+  entry: path.resolve(__dirname, 'server.js'),
+
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js', // Notice we use a variable
+    filename: 'server.bundle.js',
   },
-  module: {
-    loaders: [{
-      test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
-      loader: 'babel', // The Module to load. "babel" is short for "babel-loader"
-      exclude: [nodeModulesDir],
-      query:
-        {
-          presets: ['react', 'es2015'],
-        },
-    }],
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-  ],
-};
 
-module.exports = config;
+  target: 'node',
+
+  // keep node_module paths out of the bundle
+  externals: fs.readdirSync(path.resolve(__dirname, 'node_modules')).concat([
+    'react-dom/server',
+  ]).reduce((ext, mod) => {
+    ext[mod] = 'commonjs ' + mod;
+    return ext;
+  }, {}),
+
+  node: {
+    __filename: true,
+    __dirname: true,
+  },
+
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader?presets[]=es2015&presets[]=react',
+      },
+    ],
+  },
+};
