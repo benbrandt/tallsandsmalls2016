@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
 
@@ -25,12 +25,16 @@ module.exports = {
   },
 
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader?presets[]=es2015&presets[]=react',
+    loaders: [{
+      test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
+      loader: 'babel', // The Module to load. "babel" is short for "babel-loader"
+      exclude: /node_modules/,
+      query: {
+        presets: ['react', 'es2015'],
       },
-    ],
+    }, {
+      test: /\.(png|jpg)$/,
+      loader: 'url?limit=25000',
+    }],
   },
 };

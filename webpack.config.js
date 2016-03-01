@@ -1,10 +1,8 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
 const config = {
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
     path.resolve(__dirname, 'app/main.jsx'),
   ],
   output: {
