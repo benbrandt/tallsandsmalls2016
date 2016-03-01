@@ -1,6 +1,7 @@
-import variables from '../styles/variables';
+import { Link } from 'react-router';
 import Radium from 'radium';
 import React, { Component, PropTypes } from 'react';
+import variables from '../styles/variables';
 
 const styles = {
   base: {
@@ -34,15 +35,16 @@ const styles = {
 class MenuItem extends Component {
   render() {
     return (
-      <a
-        href={this.props.link}
+      <div
         style={[
           styles.base,
           this.props.type === 'logo' ? styles.logo : {},
         ]}
       >
-        {this.props.children}
-      </a>
+        <Link to={this.props.link}>
+          {this.props.children}
+        </Link>
+      </div>
     );
   }
 }
