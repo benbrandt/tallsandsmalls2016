@@ -22,11 +22,11 @@ const config = {
       loader: 'url?limit=25000',
     }],
   },
-  plugins: process.env.NODE_ENV === 'production' ? [
+  plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
-  ] : [],
+  ],
 };
 
 module.exports = config;
