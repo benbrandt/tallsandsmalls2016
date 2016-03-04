@@ -1,6 +1,7 @@
 import color from 'color';
 import Radium from 'radium';
 import React, { Component, PropTypes } from 'react';
+import variables from '../styles/variables';
 
 const styles = {
   base: {
@@ -19,10 +20,10 @@ const styles = {
   },
 
   primary: {
-    background: '#2199e8',
+    background: variables.colors.burgandy,
 
     ':hover': {
-      background: color('#2199e8').darken(0.2).hexString(),
+      background: color(variables.colors.burgandy).darken(0.2).hexString(),
     },
   },
 

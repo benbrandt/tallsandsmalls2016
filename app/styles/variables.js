@@ -34,6 +34,37 @@ const variables = {
     radius: '.25rem',
     speed: '86ms',
   },
+
+  formBase: {
+    background: '#fff',
+    borderColor: '#dddcc5',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    color: '#1D2326',
+    display: 'inline-block',
+    fontSize: '1.25rem',
+    height: '2.5rem',
+    lineHeight: '2',
+    MozAppearance: 'none',
+    padding: '.25rem .67rem',
+    position: 'relative',
+    verticalAlign: 'top',
+    WebkitAppearance: 'none',
+
+    ':hover': {
+      borderColor: '#958976',
+    },
+
+    ':active': {
+      borderColor: '#611427',
+      outline: 'none',
+    },
+
+    ':focus': {
+      borderColor: '#611427',
+      outline: 'none',
+    },
+  },
 };
 
 export default variables;

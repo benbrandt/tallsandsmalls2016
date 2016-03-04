@@ -63,36 +63,42 @@ class App extends Component {
               fontSize: variables.font.sizes.one,
               lineHeight: variables.font.headings.lineHeight,
               marginBottom: variables.font.headings.marginBottom,
+              marginTop: '0',
             },
 
             h2: {
               fontSize: variables.font.sizes.two,
               lineHeight: variables.font.headings.lineHeight,
               marginBottom: variables.font.headings.marginBottom,
+              marginTop: '0',
             },
 
             h3: {
               fontSize: variables.font.sizes.three,
               lineHeight: variables.font.headings.lineHeight,
               marginBottom: variables.font.headings.marginBottom,
+              marginTop: '0',
             },
 
             h4: {
               fontSize: variables.font.sizes.four,
               lineHeight: variables.font.headings.lineHeight,
               marginBottom: variables.font.headings.marginBottom,
+              marginTop: '0',
             },
 
             h5: {
               fontSize: variables.font.sizes.five,
               lineHeight: variables.font.headings.lineHeight,
               marginBottom: variables.font.headings.marginBottom,
+              marginTop: '0',
             },
 
             h6: {
               fontSize: variables.font.sizes.six,
               lineHeight: variables.font.headings.lineHeight,
               marginBottom: variables.font.headings.marginBottom,
+              marginTop: '0',
             },
 
             p: {
