@@ -5,18 +5,24 @@ import variables from '../styles/variables';
 
 const styles = {
   base: {
-    background: color(variables.colors.champagne).clearer(0.1).rgbString(),
+    background: color(variables.colors.champagne).clearer(0.3).rgbString(),
     display: 'flex',
     flex: '1',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '2rem',
+    textAlign: 'center',
   },
 
   wrapper: {
+    alignItems: 'center',
+    background: color('#fff').clearer(0.3).rgbString(),
+    display: 'flex',
+    flexDirection: 'column',
     maxWidth: variables.misc.maxWidth,
     margin: '0 auto',
-    width: '100%',
+    padding: '2rem',
+    position: 'relative',
+    width: 'auto',
   },
 };
 
@@ -33,7 +39,7 @@ class Panel extends Component {
 }
 
 Panel.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 export default Radium(Panel);
