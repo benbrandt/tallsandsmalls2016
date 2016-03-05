@@ -7,10 +7,9 @@ const styles = {
   base: {
     color: variables.colors.black,
     flex: '1',
-    flexOrder: '1',
     fontWeight: '700',
     margin: 'auto',
-    padding: '.85rem 1rem',
+    padding: '.5rem 1rem',
     textAlign: 'center',
     textDecoration: 'none',
     textTransform: 'uppercase',
@@ -18,16 +17,22 @@ const styles = {
     ':hover': {
       color: variables.colors.burgandy,
     },
+
+    '@media min-width(600px)': {
+      padding: '.85rem 1rem',
+    },
   },
 
   logo: {
-    flexOrder: '-1',
     fontFamily: variables.font.families.cursive,
     fontSize: variables.font.sizes.three,
+    flex: '1 1 100%',
     textTransform: 'none',
+    width: '100%',
 
     '@media min-width(600px)': {
-      flexOrder: '1',
+      flex: '1 1 0%',
+      fontSize: variables.font.sizes.two,
     },
   },
 };

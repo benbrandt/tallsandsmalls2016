@@ -11,14 +11,12 @@ const styles = {
 
   wrapper: {
     display: 'flex',
-    flexDirection: 'column',
     justifyContent: 'space-around',
     maxWidth: variables.misc.maxWidth,
     margin: '0 auto',
     width: '100%',
 
     '@media (min-width: 600px)': {
-      flexFlow: 'row nowrap',
       justifyContent: 'center',
     },
   },
