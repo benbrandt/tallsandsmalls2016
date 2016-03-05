@@ -9,7 +9,7 @@ const variables = {
 
   font: {
     families: {
-      cursive: 'Pacifico, cursive',
+      cursive: 'Engagement, serif',
       sansSerif: 'Roboto, sans-serif',
     },
     headings: {

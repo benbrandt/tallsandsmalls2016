@@ -19,11 +19,12 @@ function renderPage(appHtml) {
     <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Talls and Smalls 201</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
       <script type="text/javascript">
         WebFontConfig = {
-          google: { families: [ 'Pacifico::latin', 'Roboto:700,300,300italic:latin' ] }
+          google: { families: [ 'Engagement::latin', 'Roboto:700,300,300italic:latin' ] }
         };
         (function() {
           var wf = document.createElement('script');
