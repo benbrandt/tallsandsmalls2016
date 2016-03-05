@@ -5,7 +5,6 @@ import variables from '../styles/variables';
 
 const styles = {
   base: {
-    background: color(variables.colors.champagne).clearer(0.3).rgbString(),
     display: 'flex',
     flex: '1',
     flexDirection: 'column',
@@ -15,7 +14,7 @@ const styles = {
 
   wrapper: {
     alignItems: 'center',
-    background: color('#fff').clearer(0.3).rgbString(),
+    background: color(variables.colors.champagne).clearer(0.1).rgbString(),
     display: 'flex',
     flexDirection: 'column',
     maxWidth: variables.misc.maxWidth,

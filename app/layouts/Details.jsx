@@ -15,6 +15,10 @@ const styles = {
     fontSize: variables.font.sizes.five,
     margin: '0.5rem',
   },
+
+  map: {
+    maxWidth: '100%',
+  },
 };
 
 class Details extends Component {
@@ -43,6 +47,7 @@ class Details extends Component {
           zoom={18}
           loadingMessage={'Be happy'}
           draggable={false}
+          style={styles.map}
         >
           <InfoWindow
             lat={location.lat}

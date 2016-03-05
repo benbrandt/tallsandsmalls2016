@@ -15,14 +15,19 @@ const styles = {
   },
 
   overlay: {
-    background: variables.colors.black,
+    backgroundImage: 'url(assets/home.jpg)',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     bottom: '0',
     content: '',
+    filter: 'grayscale(1)',
     left: '0',
-    opacity: '.25',
+    opacity: '.8',
     position: 'absolute',
     right: '0',
     top: '0',
+    WebkitFilter: 'grayscale(1)',
   },
 };
 
@@ -33,8 +38,7 @@ class App extends Component {
         <Style
           rules={{
             body: {
-              background: 'url(assets/home.jpg) center no-repeat',
-              backgroundSize: 'cover',
+              background: variables.colors.black,
               color: variables.colors.gray,
               fontFamily: variables.font.families.sansSerif,
               fontSize: '1rem',
@@ -61,6 +65,7 @@ class App extends Component {
 
             h1: {
               fontSize: variables.font.sizes.one,
+              fontWeight: 'normal',
               lineHeight: variables.font.headings.lineHeight,
               marginBottom: variables.font.headings.marginBottom,
               marginTop: '0',
