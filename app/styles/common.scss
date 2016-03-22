@@ -1,0 +1,148 @@
+/**
+ * Common Styles
+ */
+body{
+  color: #363636;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.6em;
+  font-style: normal;
+  font-weight: 500;
+  margin:0;
+  padding:0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #6598b8;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Josefin Sans', sans-serif;
+
+  small {
+    font-size:60%;
+  }
+}
+
+.desaturate {
+  filter: grayscale(100%);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+/**
+ * Loader Styles
+ */
+.loader {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .spinnerBlock {
+    animation: rotate 600ms linear 600ms infinite;
+    display: block;
+    height: 50px;
+    transform-origin: center;
+    width: 50px;
+  }
+
+  span {
+    border: 2px solid #eee;
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &:nth-child(1) {
+      border-color: #eee;
+    }
+
+    &:nth-child(2) {
+      left: -18px;
+      top: 10px;
+    }
+
+    &:nth-child(3) {
+      left: -18px;
+      top: -10px;
+    }
+
+    &:nth-child(4) {
+      left: 0;
+      top: -18px;
+    }
+
+    &:nth-child(5) {
+      left: 18px;
+      top: -10px;
+    }
+
+    &:nth-child(6) {
+      left: 18px;
+      top: 10px;
+    }
+
+    &:nth-child(7) {
+      left: 0;
+      top: 18px;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/**
+ * Fade in effect
+ * http://cssnerd.com/2012/04/03/jquery-like-pure-css3-image-fade-in/
+ */
+.fadeIn {
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+
+.fadeIn-3s {
+  animation-duration: 1s;
+}
+
+.fadeIn-5s {
+  animation-duration: 2s;
+}
+
+.fadeIn-Delay-3s {
+  animation-delay: 1s;
+}
+
+.fadeIn-Delay-5s {
+  animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
