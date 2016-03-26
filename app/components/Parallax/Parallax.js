@@ -1,23 +1,39 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import CSSModules from 'react-css-modules';
 import styles from './Parallax.css';
 
 class Parallax extends Component {
+  constructor() {
+    super();
+    this.state = { position: 0 };
+    this.scroll = this.scroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll');
+  }
+
   scroll() {
     const windowYOffset = window.pageYOffset;
-    const elmTopOffset = this.element.offsetTop;
-    this.position = `50% ${(windowYOffset - elmTopOffset) * Parallax.speed}px`;
+    const elmTopOffset = ReactDOM.findDOMNode(this.refs[this.props.index]).offsetTop;
+    const position = (windowYOffset - elmTopOffset) * this.props.speed;
+    this.setState({ position });
   }
 
   render() {
     return (
       <div
+        ref={this.props.index}
         styleName="parallax"
         style={{
-          backgroundPosition: this.props.position,
+          backgroundPosition: `50% ${this.state.position}px`,
           backgroundImage: `url(${this.props.bgImage})`,
         }}
-        onScroll={this.scroll}
       />
     );
   }
@@ -25,12 +41,12 @@ class Parallax extends Component {
 
 Parallax.propTypes = {
   bgImage: PropTypes.string,
-  position: PropTypes.string,
+  index: PropTypes.string,
   speed: PropTypes.number,
 };
 
 Parallax.defaultProps = {
-  position: '50% 0',
+  index: 0,
   speed: 0.5,
 };
 

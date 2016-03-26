@@ -14,7 +14,7 @@ const App = () => {
       <Header
         names={names}
       />
-      <Parallax bgImage="assets/home.jpg" />
+      <Parallax index="0" bgImage="assets/home.jpg" />
       <Section src="assets/hearts.png">
         <h3>We met through friends, well kinda...</h3>
         <p>
@@ -25,7 +25,7 @@ const App = () => {
         </p>
       </Section>
 
-      <Parallax bgImage="assets/home.jpg" />
+      <Parallax index="1" bgImage="assets/home.jpg" />
 
       <Section src="assets/Church.png">
         <h3>
@@ -41,7 +41,7 @@ const App = () => {
         </p>
       </Section>
 
-      <Parallax bgImage="assets/home.jpg" />
+      <Parallax index="2" bgImage="assets/home.jpg" />
 
       <Section src="assets/travel.png">
         <h3>Travel and Accommodations</h3>
@@ -61,7 +61,7 @@ const App = () => {
         </p>
       </Section>
 
-      <Parallax bgImage="assets/home.jpg" />
+      <Parallax index="3" bgImage="assets/home.jpg" />
 
       <Section src="assets/gift.png">
         <h3>Registry</h3>
@@ -72,7 +72,7 @@ const App = () => {
         </p>
       </Section>
 
-      <Parallax bgImage="assets/home.jpg" />
+      <Parallax index="4" bgImage="assets/home.jpg" />
     </div>
   );
 };
