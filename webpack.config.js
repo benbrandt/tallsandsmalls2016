@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   entry: [
-    path.resolve(__dirname, 'app/main.jsx'),
+    path.resolve(__dirname, 'app/main.js'),
   ],
   output: {
     path: path.resolve(__dirname, 'build'),

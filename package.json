@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:client": "webpack",
-    "build:server": "webpack -p --config webpack.production.config.js",
     "start:dev": "webpack-dev-server --inline --devtool eval --progress --colors --hot --content-base build --history-api-fallback",
-    "start:prod": "npm run deploy && node server.bundle.js",
-    "deploy": "npm run build:client && npm run build:server"
+    "start:prod": "npm run build:client"
   },
   "author": "Ben Brandt",
   "license": "ISC",
