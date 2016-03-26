@@ -1,0 +1,57 @@
+.header {
+  background-color: #fff;
+  display: block;
+  position: fixed;
+  transition: all 100ms linear 100ms;
+  width: 100%;
+  z-index: 8001;
+}
+
+.heading-wrapper {
+  composes: col-sm-12 from '../../styles/grid.css';
+}
+
+.heading {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 6px;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: middle;
+  z-index: 8002;
+}
+
+.inner {
+  composes: row from '../../styles/grid.css';
+
+  margin: 0 auto;
+  padding: 25px 80px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.scrolled {
+  background-color: #f5f5f5;
+}
+
+.scrolled .inner {
+  padding: 15px 80px;
+}
+
+.scrolled .heading {
+  font-size: 90%;
+}
+
+/**
+ * Mobile Devices ( Phones )
+ */
+@media (max-width: 768px) {
+  .heading {
+    text-align: center;
+  }
+}

@@ -1,23 +1,19 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './Header.css';
 
-export default class Header extends Component {
-  render() {
-    return (
-      <header className="headerClass">
-        <div className="inner">
-          <div className="row">
-            <div className="col-md-4">
-              <div className="box">
-                <h1>{this.props.names}</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    );
-  }
-}
+const Header = (props) => (
+  <header styleName="header">
+    <div styleName="inner">
+      <div styleName="heading-wrapper">
+        <h1 styleName="heading">{props.names}</h1>
+      </div>
+    </div>
+  </header>
+);
 
 Header.propTypes = {
   names: PropTypes.string,
 };
+
+export default CSSModules(Header, styles);

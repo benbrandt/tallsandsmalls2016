@@ -1,11 +1,11 @@
 /**
  * Common Styles
  */
-body{
+body {
   color: #363636;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   line-height: 1.6em;
   font-style: normal;
   font-weight: 500;
@@ -22,12 +22,17 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Josefin Sans', sans-serif;
-
-  small {
-    font-size:60%;
-  }
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small {
+  font-size:60%;
 }
 
 .desaturate {
@@ -47,59 +52,59 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+}
 
-  .spinnerBlock {
-    animation: rotate 600ms linear 600ms infinite;
-    display: block;
-    height: 50px;
-    transform-origin: center;
-    width: 50px;
-  }
+.loader .spinnerBlock {
+  animation: rotate 600ms linear 600ms infinite;
+  display: block;
+  height: 50px;
+  transform-origin: center;
+  width: 50px;
+}
 
-  span {
-    border: 2px solid #eee;
-    border-radius: 50%;
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+.loader span {
+  border: 2px solid #eee;
+  border-radius: 50%;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 
-    &:nth-child(1) {
-      border-color: #eee;
-    }
+.loader span:nth-child(1) {
+  border-color: #eee;
+}
 
-    &:nth-child(2) {
-      left: -18px;
-      top: 10px;
-    }
+.loader span:nth-child(2) {
+  left: -18px;
+  top: 10px;
+}
 
-    &:nth-child(3) {
-      left: -18px;
-      top: -10px;
-    }
+.loader span:nth-child(3) {
+  left: -18px;
+  top: -10px;
+}
 
-    &:nth-child(4) {
-      left: 0;
-      top: -18px;
-    }
+.loader span:nth-child(4) {
+  left: 0;
+  top: -18px;
+}
 
-    &:nth-child(5) {
-      left: 18px;
-      top: -10px;
-    }
+.loader span:nth-child(5) {
+  left: 18px;
+  top: -10px;
+}
 
-    &:nth-child(6) {
-      left: 18px;
-      top: 10px;
-    }
+.loader span:nth-child(6) {
+  left: 18px;
+  top: 10px;
+}
 
-    &:nth-child(7) {
-      left: 0;
-      top: 18px;
-    }
-  }
+.loader span:nth-child(7) {
+  left: 0;
+  top: 18px;
 }
 
 @keyframes rotate {
