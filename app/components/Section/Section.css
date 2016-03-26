@@ -1,0 +1,16 @@
+.section {
+  background-color: #fff;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.img {
+  display: block;
+  text-align: center;
+  margin:0 auto;
+}

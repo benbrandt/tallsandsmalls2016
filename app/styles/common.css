@@ -35,6 +35,18 @@ h4 small {
   font-size:60%;
 }
 
+h3 {
+  font-size: 32px;
+  line-height: 1.2em;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  margin: 1em 0 .5em;
+  color: #1c1c1c;
+}
+
 .desaturate {
   filter: grayscale(100%);
 }
