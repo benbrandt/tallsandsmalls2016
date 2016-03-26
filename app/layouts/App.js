@@ -1,8 +1,7 @@
-import React, { PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
-import styles from '../styles/common.css';
+import React from 'react';
 import content from '../data/content.js';
 import Header from '../components/Header/Header';
+import Parallax from '../components/Parallax/Parallax';
 
 const App = () => {
   const bride = content.details.party.bride.substr(0, content.details.party.bride.indexOf(' '));
@@ -14,13 +13,10 @@ const App = () => {
       <Header
         names={names}
       />
+      <Parallax bgImage="assets/home.jpg" />
 
     </div>
   );
 };
 
-App.propTypes = {
-
-};
-
-export default CSSModules(App, styles);
+export default App;

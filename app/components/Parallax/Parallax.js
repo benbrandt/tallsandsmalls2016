@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './Parallax.css';
 
-export default class Parallax extends Component {
+class Parallax extends Component {
   scroll() {
     const windowYOffset = window.pageYOffset;
     const elmTopOffset = this.element.offsetTop;
@@ -10,18 +12,19 @@ export default class Parallax extends Component {
   render() {
     return (
       <div
-        className="bg fadeIn fadeIn-3s fadeIn-Delay-3s"
-        style={{ backgroundPosition: this.props.position }}
+        styleName="parallax"
+        style={{
+          backgroundPosition: this.props.position,
+          backgroundImage: `url(${this.props.bgImage})`,
+        }}
         onScroll={this.scroll}
-      >
-        {this.props.children}
-      </div>
+      />
     );
   }
 }
 
 Parallax.propTypes = {
-  children: PropTypes.element,
+  bgImage: PropTypes.string,
   position: PropTypes.string,
   speed: PropTypes.number,
 };
@@ -30,3 +33,5 @@ Parallax.defaultProps = {
   position: '50% 0',
   speed: 0.5,
 };
+
+export default CSSModules(Parallax, styles);

@@ -1,0 +1,8 @@
+.parallax {
+  composes: fadeIn fadeIn-3s fadeIn-Delay-3s from '../../styles/common.css';
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 65vh;
+}
