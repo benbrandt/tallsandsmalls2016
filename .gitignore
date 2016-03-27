@@ -4,5 +4,6 @@ build/assets
 .idea
 *.swp
 *~
+build/app.css
 bundle.js
 server.bundle.js
