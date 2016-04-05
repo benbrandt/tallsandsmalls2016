@@ -31,10 +31,7 @@ const App = () => {
       <Parallax index="rsvp" bgImage="assets/IMG_5586@0,5x.jpg" />
 
       <Section src="assets/date.png">
-        <Rsvp
-          email={content.contact.email}
-          cc={content.contact.cc}
-        />
+        <Rsvp db={content.firebase.url} />
       </Section>
     </div>
   );

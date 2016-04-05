@@ -1,26 +1,46 @@
 import React, { Component, PropTypes } from 'react';
 import cssModules from 'react-css-modules';
 import styles from './Rsvp.css';
+import Firebase from 'firebase';
 
 class Rsvp extends Component {
   constructor() {
     super();
     this.state = {
+      adults: 0,
       attending: false,
+      children: 0,
+      error: false,
       gotcha: '',
       guest: '',
-      seats: 0,
       submitted: false,
     };
+    this.handleAdults = this.handleAdults.bind(this);
     this.handleAttending = this.handleAttending.bind(this);
+    this.handleChildren = this.handleChildren.bind(this);
     this.handleGotcha = this.handleGotcha.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
-    this.handleSeats = this.handleSeats.bind(this);
     this.submitForm = this.submitForm.bind(this);
+  }
+
+  componentWillMount() {
+    this.firebaseRef = new Firebase(this.props.db);
+  }
+
+  componentWillUnmount() {
+    this.firebaseRef.off();
+  }
+
+  handleAdults(e) {
+    this.setState({ adults: parseInt(e.target.value, 10) });
   }
 
   handleAttending(e) {
     this.setState({ attending: e.target.checked });
+  }
+
+  handleChildren(e) {
+    this.setState({ children: parseInt(e.target.value, 10) });
   }
 
   handleGotcha(e) {
@@ -31,28 +51,23 @@ class Rsvp extends Component {
     this.setState({ guest: e.target.value });
   }
 
-  handleSeats(e) {
-    this.setState({ seats: e.target.value });
-  }
-
   submitForm(e) {
     e.preventDefault();
 
-    const data = {
-      _subject: 'New RSVP from TallsandSmalls2016.com',
-      _cc: this.props.cc,
-      guest: this.state.guest,
-      seats: this.state.seats,
-      attending: this.state.attending ? 'Attending: Yes' : 'Attending: No',
-      _gotcha: this.state.gotcha,
-    };
-
-    const request = new XMLHttpRequest();
-    request.open('POST', `https://formspree.io/${this.props.email}`, true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    request.send(JSON.stringify(data));
-
-    this.setState({ submitted: true });
+    if (this.state.gotcha === '') {
+      this.firebaseRef.push({
+        guest: this.state.guest,
+        adults: this.state.adults,
+        children: this.state.children,
+        attending: this.state.attending,
+      }, (error) => {
+        if (error) {
+          this.setState({ error: true });
+        } else {
+          this.setState({ submitted: true });
+        }
+      });
+    }
   }
 
   render() {
@@ -61,7 +76,11 @@ class Rsvp extends Component {
         <h3>RSVP</h3>
 
         <p hidden={!this.state.submitted}>
-          Thanks for letting us know!
+          Thanks {this.state.guest} for letting us know!
+        </p>
+
+        <p hidden={!this.state.error}>
+          Sorry we couldn't save your RSVP. Please try again later.
         </p>
 
         <form
@@ -80,9 +99,17 @@ class Rsvp extends Component {
           <input
             hidden={!this.state.attending}
             type="number"
-            placeholder="Number of Seats"
-            name="seats"
-            onChange={this.handleSeats}
+            placeholder="Number of Adults"
+            name="adults"
+            onChange={this.handleAdults}
+          />
+
+          <input
+            hidden={!this.state.attending}
+            type="number"
+            placeholder="Number of Children"
+            name="children"
+            onChange={this.handleChildren}
           />
 
           <input
@@ -114,11 +141,7 @@ class Rsvp extends Component {
 }
 
 Rsvp.propTypes = {
-  cc: PropTypes.string,
-  email: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  seats: PropTypes.number,
-  attending: PropTypes.bool,
+  db: PropTypes.string,
 };
 
 export default cssModules(Rsvp, styles);
