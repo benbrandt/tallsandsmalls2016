@@ -88,32 +88,33 @@ class Rsvp extends Component {
           id="rsvp"
           name="rsvp"
         >
-          <label>Name of Guest</label>
-          <input
-            type="text"
-            name="guest"
-            required
-            placeholder="Name of guest"
-            onChange={this.handleGuest}
-          />
+          <label>Name of Guest
+            <input
+              type="text"
+              name="guest"
+              required
+              placeholder="Name of guest"
+              onChange={this.handleGuest}
+            />
+          </label>
 
-          <label>Number of Adults</label>
-          <input
-            hidden={!this.state.attending}
-            type="number"
-            placeholder="Number of Adults"
-            name="adults"
-            onChange={this.handleAdults}
-          />
+          <label hidden={!this.state.attending}>Number of Adults
+            <input
+              type="number"
+              placeholder="Number of Adults"
+              name="adults"
+              onChange={this.handleAdults}
+            />
+          </label>
 
-          <label>Number of Children</label>
-          <input
-            hidden={!this.state.attending}
-            type="number"
-            placeholder="Number of Children"
-            name="children"
-            onChange={this.handleChildren}
-          />
+          <label hidden={!this.state.attending}>Number of Children
+            <input
+              type="number"
+              placeholder="Number of Children"
+              name="children"
+              onChange={this.handleChildren}
+            />
+          </label>
 
           <input
             type="checkbox"
