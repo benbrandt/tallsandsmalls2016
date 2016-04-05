@@ -1,9 +1,17 @@
 .parallax {
   composes: desaturate fadeIn fadeIn-3s fadeIn-Delay-3s from '../../styles/common.css';
-  background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
   height: 90vh;
+}
+
+/**
+ * Desktop
+ */
+@media (min-width: 768px) {
+  .parallax {
+    background-attachment: fixed;
+  }
 }
