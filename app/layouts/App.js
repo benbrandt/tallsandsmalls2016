@@ -12,7 +12,7 @@ const App = () => {
 
   const sections = content.sections.map(section => (
     <div key={section.id}>
-      <Parallax index={section.id} bgImage={section.parallax} />
+      <Parallax bgImage={section.parallax} />
       <Section src={section.img}>
         <h3 dangerouslySetInnerHTML={{ __html: section.header }} />
         <p dangerouslySetInnerHTML={{ __html: section.copy }} />
@@ -28,7 +28,7 @@ const App = () => {
 
       {sections}
 
-      <Parallax index="rsvp" bgImage="assets/home.jpg" />
+      <Parallax index="rsvp" bgImage="assets/IMG_5586@0,5x.jpg" />
 
       <Section src="assets/date.png">
         <Rsvp

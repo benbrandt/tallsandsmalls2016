@@ -47,10 +47,6 @@ h3 {
   color: #1c1c1c;
 }
 
-.desaturate {
-  filter: grayscale(100%);
-}
-
 [hidden] {
   display: none !important;
 }
