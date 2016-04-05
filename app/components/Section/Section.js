@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from './Section.css';
 
 const Section = (props) => (
@@ -16,4 +16,4 @@ Section.propTypes = {
   src: PropTypes.string,
 };
 
-export default CSSModules(Section, styles);
+export default cssModules(Section, styles);

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from './Parallax.css';
 
 class Parallax extends Component {
@@ -50,4 +50,4 @@ Parallax.defaultProps = {
   speed: 0.5,
 };
 
-export default CSSModules(Parallax, styles);
+export default cssModules(Parallax, styles);

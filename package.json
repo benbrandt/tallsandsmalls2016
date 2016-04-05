@@ -6,7 +6,7 @@
   "scripts": {
     "build:client": "webpack",
     "start:dev": "webpack-dev-server --inline --devtool eval --progress --colors --hot --content-base build --history-api-fallback",
-    "start:prod": "npm run build:client"
+    "start:prod": "npm run build:client --production"
   },
   "author": "Ben Brandt",
   "license": "ISC",

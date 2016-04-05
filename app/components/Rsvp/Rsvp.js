@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from './Rsvp.css';
 
 class Rsvp extends Component {
@@ -121,4 +121,4 @@ Rsvp.propTypes = {
   attending: PropTypes.bool,
 };
 
-export default CSSModules(Rsvp, styles);
+export default cssModules(Rsvp, styles);
