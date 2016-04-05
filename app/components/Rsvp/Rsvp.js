@@ -88,6 +88,7 @@ class Rsvp extends Component {
           id="rsvp"
           name="rsvp"
         >
+          <label>Name of Guest</label>
           <input
             type="text"
             name="guest"
@@ -96,6 +97,7 @@ class Rsvp extends Component {
             onChange={this.handleGuest}
           />
 
+          <label>Number of Adults</label>
           <input
             hidden={!this.state.attending}
             type="number"
@@ -104,6 +106,7 @@ class Rsvp extends Component {
             onChange={this.handleAdults}
           />
 
+          <label>Number of Children</label>
           <input
             hidden={!this.state.attending}
             type="number"
