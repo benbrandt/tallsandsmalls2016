@@ -14,15 +14,18 @@ label {
 
 input[type=text],
 input[type=number] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #CCC;
   border-radius: 20px;
+  color: #333;
   display: block;
   font-size: 12px;
-  height: 15px;
+  height: 42px;
   margin-bottom: 15px;
   overflow: hidden;
-  padding: 20px;
+  padding: 0 20px;
   transition: all 0.5s ease-in-out;
   width: 100%;
 }
@@ -35,6 +38,7 @@ input[type=number]:focus {
 
 
 input[type=checkbox] {
+  -moz-appearance: none;
   -webkit-appearance: none;
   background-color: rgba(255, 255, 255, 0.1);
   border:solid 1px #CCC;
