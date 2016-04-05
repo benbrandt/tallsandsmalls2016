@@ -1,5 +1,5 @@
 .parallax {
-  composes: desaturate fadeIn fadeIn-3s fadeIn-Delay-3s from '../../styles/common.css';
+  composes: fadeIn fadeIn-3s fadeIn-Delay-3s from '../../styles/common.css';
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
