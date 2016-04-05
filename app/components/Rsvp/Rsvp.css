@@ -2,7 +2,7 @@
 form {
   margin: 40px auto 0;
   text-align: center;
-  width: 100%;
+  width: 50%;
 }
 
 input,
@@ -93,10 +93,8 @@ button[type=submit]:disabled{
 /**
  * Desktop
  */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   form {
-    margin: 40px auto 0;
-    text-align: center;
-    width: 50%;
+    width: 100%;
   }
 }
