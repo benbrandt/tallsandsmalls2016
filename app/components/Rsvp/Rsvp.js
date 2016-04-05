@@ -32,7 +32,7 @@ class Rsvp extends Component {
   }
 
   handleAdults(e) {
-    this.setState({ adults: parseInt(e.target.value, 10) });
+    this.setState({ adults: e.target.value });
   }
 
   handleAttending(e) {
@@ -40,7 +40,7 @@ class Rsvp extends Component {
   }
 
   handleChildren(e) {
-    this.setState({ children: parseInt(e.target.value, 10) });
+    this.setState({ children: e.target.value });
   }
 
   handleGotcha(e) {
@@ -100,7 +100,7 @@ class Rsvp extends Component {
 
           <label hidden={!this.state.attending}>Number of Adults
             <input
-              type="number"
+              type="text"
               placeholder="Number of Adults"
               name="adults"
               onChange={this.handleAdults}
@@ -109,7 +109,7 @@ class Rsvp extends Component {
 
           <label hidden={!this.state.attending}>Number of Children
             <input
-              type="number"
+              type="text"
               placeholder="Number of Children"
               name="children"
               onChange={this.handleChildren}
