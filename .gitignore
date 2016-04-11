@@ -5,5 +5,5 @@ build/assets
 *.swp
 *~
 build/app.css
-bundle.js
+*.bundle.js
 server.bundle.js

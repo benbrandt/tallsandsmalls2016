@@ -3,12 +3,13 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
-  entry: [
-    path.resolve(__dirname, 'app/main.js'),
-  ],
+  entry: {
+    admin: [path.resolve(__dirname, 'app/admin.js')],
+    main: [path.resolve(__dirname, 'app/main.js')],
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   module: {
     loaders: [
