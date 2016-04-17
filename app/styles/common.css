@@ -158,6 +158,39 @@ button[type=submit]:disabled{
   }
 }
 
+table {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #ccc;
+  border-width: 0 0 1px;
+  padding: 8px 10px;
+  vertical-align: top;
+}
+
+th {
+  border-width: 0 0 2px;
+}
+
+tr:hover {
+  background: #eee;
+}
+
+tbody tr:last-child td {
+  border-bottom-width: 0;
+}
+
+tbody tr:nth-child(2n) {
+  background: #eee;
+}
+
+tbody tr:nth-child(2n):hover {
+  background: #ddd;
+}
+
 /**
  * Loader Styles
  */

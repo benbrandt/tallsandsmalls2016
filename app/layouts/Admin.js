@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import React, { Component } from 'react';
 import content from '../data/content.js';
 import Login from '../components/Login/Login';
+import RsvpAdmin from '../components/RsvpAdmin/RsvpAdmin';
 
 class Admin extends Component {
   constructor() {
@@ -23,7 +24,12 @@ class Admin extends Component {
 
   render() {
     return (
-        <Login auth={this.handleAuth} db={content.firebase.url} />
+      <div>
+        {this.state.auth
+          ? <RsvpAdmin db={content.firebase.url} />
+          : <Login auth={this.handleAuth} db={content.firebase.url} />
+        }
+      </div>
     );
   }
 }
