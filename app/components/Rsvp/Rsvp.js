@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import cssModules from 'react-css-modules';
-import styles from './Rsvp.css';
 import Firebase from 'firebase';
 
 class Rsvp extends Component {
@@ -148,4 +146,4 @@ Rsvp.propTypes = {
   db: PropTypes.string,
 };
 
-export default cssModules(Rsvp, styles);
+export default Rsvp;
