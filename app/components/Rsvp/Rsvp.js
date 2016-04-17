@@ -107,7 +107,7 @@ class Rsvp extends Component {
             />
           </label>
 
-          <label hidden={!this.state.attending}>Number of Children
+          <label hidden={!this.state.attending}>Number of Children (12 or under)
             <input
               type="text"
               placeholder="Number of Children"
