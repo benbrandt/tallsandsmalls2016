@@ -5,7 +5,7 @@ import styles from './Section.css';
 const Section = (props) => (
   <section styleName="section">
     <div styleName="inner">
-      <img styleName="img" src={props.src} />
+      <img styleName="img" src={props.src} role="presentation" />
       {props.children}
     </div>
   </section>

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import CSSModules from 'react-css-modules';
+import cssModules from 'react-css-modules';
 import styles from './Header.css';
 
 const Header = (props) => (
@@ -16,4 +16,4 @@ Header.propTypes = {
   names: PropTypes.string,
 };
 
-export default CSSModules(Header, styles);
+export default cssModules(Header, styles);
