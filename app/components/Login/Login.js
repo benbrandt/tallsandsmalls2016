@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Section from '../Section/Section';
 import Firebase from 'firebase';
 
 class Login extends Component {
@@ -9,7 +10,6 @@ class Login extends Component {
       error: false,
       gotcha: '',
       password: '',
-      submitted: false,
     };
     this.handleEmail = this.handleEmail.bind(this);
     this.handleGotcha = this.handleGotcha.bind(this);
@@ -46,9 +46,9 @@ class Login extends Component {
         password: this.state.password,
       }, (error, authData) => {
         if (error) {
-          console.log("Login Failed!", error);
+          this.setState({ error });
         } else {
-          console.log("Authenticated successfully with payload:", authData);
+          this.props.auth(authData);
         }
       });
     }
@@ -56,7 +56,9 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <Section
+        src=""
+      >
         <h3>RSVP Admin</h3>
 
         <p hidden={!this.state.error}>
@@ -64,7 +66,6 @@ class Login extends Component {
         </p>
 
         <form
-          hidden={this.state.submitted}
           id="rsvp"
           name="rsvp"
         >
@@ -101,12 +102,13 @@ class Login extends Component {
               Submit
           </button>
         </form>
-      </div>
+      </Section>
     );
   }
 }
 
 Login.propTypes = {
+  auth: PropTypes.func,
   db: PropTypes.string,
 };
 

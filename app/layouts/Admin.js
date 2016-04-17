@@ -1,14 +1,31 @@
 import 'babel-polyfill';
-import React from 'react';
+import React, { Component } from 'react';
 import content from '../data/content.js';
 import Login from '../components/Login/Login';
-import Section from '../components/Section/Section';
 
-const Admin = () => (
-  <div>
-    <Section src="">
-      <Login db={content.firebase.url} />
-    </Section>
-  </div>
-);
+class Admin extends Component {
+  constructor() {
+    super();
+    this.state = {
+      auth: false,
+      authData: {},
+    };
+    this.handleAuth = this.handleAuth.bind(this);
+  }
+
+  handleAuth(authData) {
+    this.setState({ authData });
+
+    if (authData) {
+      this.setState({ auth: true });
+    }
+  }
+
+  render() {
+    return (
+        <Login auth={this.handleAuth} db={content.firebase.url} />
+    );
+  }
+}
+
 export default Admin;
